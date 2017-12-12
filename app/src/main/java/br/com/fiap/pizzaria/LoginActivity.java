@@ -19,7 +19,7 @@ public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.password)
     TextInputLayout password;
 
-    public static final String USERNAME = "username";
+    public static final String CLIENTE = "CLIENTE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,9 +50,9 @@ public class LoginActivity extends AppCompatActivity {
 
     @OnClick(R.id.btConectar)
     public void conectar() {
-        if (validaUsuario() || validaSenha()) {
+        if (validaUsuario() && validaSenha()) {
             Intent intent = new Intent(this, MainActivity.class);
-            intent.putExtra(USERNAME, username.getEditText().getText().toString());
+            intent.putExtra(CLIENTE, username.getEditText().getText().toString());
             startActivity(intent);
         }
 
